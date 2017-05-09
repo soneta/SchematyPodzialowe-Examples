@@ -34,7 +34,7 @@ public class Podzielnik_Pozycja_Netto_Sample_A4
 
 		public Soneta.Core.DokEwidencji DokEwidencji
 		{
-			get { return (Soneta.Core.DokEwidencji)Row; }
+			get { return (DokEwidencji)Row; }
 		}
 
 		public override bool IsEnable()
@@ -54,7 +54,7 @@ public class Podzielnik_Pozycja_Netto_Sample_A4
 
 		public override IEnumerable GetKluczeList()
 		{
-			return new Soneta.Core.DokEwidencji[] { DokEwidencji };
+			return new DokEwidencji[] { DokEwidencji };
 		}
 	}
 
@@ -167,7 +167,7 @@ public class Podzielnik_Pozycja_VAT_Sample_A4
 
 		public override IEnumerable GetKluczeList()
 		{
-			return new Soneta.Core.DokEwidencji[] { DokEwidencji };
+			return new DokEwidencji[] { DokEwidencji };
 		}
 	}
 
