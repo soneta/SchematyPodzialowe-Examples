@@ -5,10 +5,11 @@ using Soneta.Types;
 
 
 
+
 /// <summary>
 /// Kod generowany na poziomie pozycji schematu podziałowego
 /// </summary>
-public class Podzielnik_Pozycja_1_Sample_A1
+public class Podzielnik_Pozycja_1_Sample_A3
 {
 	/// <summary>
 	/// Kalkulator podzielnika
@@ -17,7 +18,6 @@ public class Podzielnik_Pozycja_1_Sample_A1
 	{
 		public PodzielnikKalkulator_DokEwidencja(IPodstawaWymiaruOpisuAnalitycznego Podstawa)
 			: base(Podstawa)
-
 		{ }
 
 
@@ -45,13 +45,13 @@ public class Podzielnik_Pozycja_1_Sample_A1
 		}
 
 		/// <summary>
-		/// Jednoelementowa lista kluczy podziałowych; kluczem jest sam dokument ewidencji
-		/// (taki kod generuje czynność "Generuj kod kluczy/Wg bieżacego")
+		/// Jednoelementowa lista kluczy podziałowych; kluczem jest wartość pusta "null"
+		/// (kalkulator klucza nie będzie miał żadnej konkretnej wartości klucza do obliczeń)
 		/// </summary>
 		/// <returns></returns>
 		public override IEnumerable GetKluczeList()
 		{
-			return new[] { DokEwidencji };
+			return new object[1];
 		}
 	}
 
@@ -67,20 +67,12 @@ public class Podzielnik_Pozycja_1_Sample_A1
 
 
 		/// <summary>
-		/// Property automatycznie generowane ponieważ zostało zadeklarowane, że zwracane klucze podziałowe są obiektami biznesowymi DokEwidencji
-		/// </summary>
-		public DokEwidencji DokEwidencji
-		{
-			get { return (DokEwidencji)Row; }
-		}
-
-
-		/// <summary>
-		/// Kwotę dla opisu analitycznego pobieramy z dokumentu ewidencji
+		/// Kwotę dla opisu analitycznego pobieramy z dokumentu ewidencji, który jest postawą naszego schematu.
+		/// (ponieważ zwróciliśmy klucz null to w tym wypadku odwołanie do klucza przez "Row" nie jest możliwe)
 		/// </summary>
 		public override Currency GetKwotaKlucza()
 		{
-			return DokEwidencji.Wartosc;
+			return ((DokEwidencji)Podstawa).Wartosc;
 		}
 
 

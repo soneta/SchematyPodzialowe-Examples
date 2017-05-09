@@ -34,7 +34,6 @@ public class Podzielnik_Pozycja_1_Sample_A2
 	{
 		public PodzielnikKalkulator_DokEwidencja(IPodstawaWymiaruOpisuAnalitycznego Podstawa)
 			: base(Podstawa)
-
 		{ }
 
 
@@ -80,7 +79,6 @@ public class Podzielnik_Pozycja_1_Sample_A2
 	{
 		public KluczKalkulator_DokEwidencja(object Row, IPodstawaWymiaruOpisuAnalitycznego Podstawa)
 			: base(Row, Podstawa)
-
 		{ }
 
 
