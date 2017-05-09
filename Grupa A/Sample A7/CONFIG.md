@@ -1,6 +1,6 @@
 ## Schematy podziałowe w enova365 dla programistów
 ### Sample A7 - konfiguracja
-
+#### Podzielnik kosztów
 
 Przed uruchomieniem schematu należy skonfigurować podzielnik kosztów.
 
@@ -12,5 +12,7 @@ W przykładzie wprowadzono następujące dane:
 
 ![](Sample%20A7.config.png)
 
+
+---
 [Powrót](README.md)
 

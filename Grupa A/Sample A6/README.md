@@ -3,7 +3,7 @@
 
 Schemat podziałowy dla ewidencji.
 
-* włączona opcja: Podział elementu wg proporcji
+* włączona opcja: podział elementu wg proporcji
 * 3 opisy analityczne w tym samym wymiarze
 * kwoty opisu generowane wg proporcji 1-1-1
 * symbole kont zadane przez klucze podziałowe
