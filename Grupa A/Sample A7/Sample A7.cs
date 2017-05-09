@@ -7,7 +7,7 @@ using Soneta.Types;
 
 
 
-public class Podzielnik_Pozycja_1_Sample_A6
+public class Podzielnik_Pozycja_1_Sample_A7
 {
 	/// <summary>
 	/// Kalkulator podzielnika
@@ -43,13 +43,13 @@ public class Podzielnik_Pozycja_1_Sample_A6
 		}
 
 		/// <summary>
-		/// Jako klucze podziałowe wykorzystujemy tablicę 3 stringów.
-		/// Każdą z wartości potraktujemy jako symbol konta na opisie analitycznym.
-		/// (liczba powstałych opisów analitycznych będzie równa ilości płatności)
+		/// Jako klucze podziałowe wykorzystujemy podzielnik kosztów.
+		/// Poniższy kod wygenerowany jest automatycznie przez czynność "Generuj kod kluczy/Wg Podzielnika".
+		/// Nazwy "Sample 7" odnoszą się odpowiednio do nazwy zestawu podzielników oraz podzienika w zestawie.
 		/// </summary>
 		public override IEnumerable GetKluczeList()
 		{
-			return new[] { "401-01", "401-02", "401-03" };
+			return PodzielnikTool.ElementyPodzielnika(Session, "Sample 7", "Sample 7", PodzielnikTool.PodzielnikAktualnosc.WgDaty, Podstawa.Data);
 		}
 	}
 
@@ -60,6 +60,15 @@ public class Podzielnik_Pozycja_1_Sample_A6
 			: base(Row, Podstawa)
 		{ }
 
+
+		/// <summary>
+		/// Property generowane automatycznie jeśli znany jest typ klucza podziałowego.
+		/// W przypadku korzystania z podzielnika kosztów typem tym jest "ElementPodzielnika"
+		/// </summary>
+		public ElementPodzielnika ElementPodzielnika
+		{
+			get { return (ElementPodzielnika)Row; }
+		}
 		
 		/// <summary>
 		/// Kwota podawana przez kalkulator klucza jest ignorowana.
@@ -77,11 +86,11 @@ public class Podzielnik_Pozycja_1_Sample_A6
 
 		/// <summary>
 		/// Ponieważ włączone jest generowanie kwot wg proporcji kalkulator klucza zwraca proporcję.
-		/// W tym przykładzie jest to arbitralnie wartość 1
+		/// W tym przykładzie wartość proporcji zwracana jest bezpośrednio przez element podzielnika.
 		/// </summary>
 		public override double GetProporcja()
 		{
-			return 1;
+			return ElementPodzielnika.Wspolczynnik;
 		}
 
 		public override string GetWymiar()
@@ -94,12 +103,9 @@ public class Podzielnik_Pozycja_1_Sample_A6
 			return Date.Today;
 		}
 
-		/// <summary>
-		/// Symbolem konta jest klucz podziałowy typu 'string'. Wymagane jest jedynie rzutowanie ponieważ właściwość 'Row' reprezentująca klucz jest typu 'object'.
-		/// </summary>
 		public override string GetSymbol()
 		{
-			return (string)Row;
+			return "401-01";
 		}
 
 		public override string GetOpis()

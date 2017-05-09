@@ -18,4 +18,4 @@ Wymagane za to jest podanie kwoty sumarycznej w kalkulatorze podzielnika.
 Warto zobserwować działanie schematu dla wartości ewidencji 1000,00 PLN
 
 * jeśli nie jest włączone zaokrąglanie otrzymujemy 3 opisy z kwotą 333,33 PLN
-* po włączeniu opcji "Zaokrąglanie kwoty" jeden z opisów ma kwotę 333,34 PLN, aby sumaryczna kwota dała wyjściową kwotę użytą do proporcjonalnego dzielenia
+* po włączeniu opcji "Zaokrąglanie kwoty" jeden z opisów ma kwotę 333,34 PLN, tak aby sumaryczna kwota dała wyjściową kwotę użytą do proporcjonalnego dzielenia

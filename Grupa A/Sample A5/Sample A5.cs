@@ -18,7 +18,6 @@ public class Podzielnik_Pozycja_1_Sample_A5
 			: base(Podstawa)
 		{ }
 
-
 		public DokEwidencji DokEwidencji
 		{
 			get { return (DokEwidencji) Row; }
@@ -58,7 +57,8 @@ public class Podzielnik_Pozycja_1_Sample_A5
 
 
 		/// <summary>
-		/// Generowany automatycznie ponieważ zadeklarowaliśmy, że kluczem podziałowym jest obiekt biznesowy płatność
+		/// Generowany automatycznie ponieważ zadeklarowaliśmy,
+		/// że kluczem podziałowym jest obiekt biznesowy płatność
 		/// </summary>
 		public Platnosc Platnosc
 		{
