@@ -8,3 +8,8 @@ Schemat podziałowy ewidencji VAT.
   * kwota VAT dokumentu w wymiarze "VAT"
 * opisy, konta: wartości arbitralnie wpisane w schemacie
 
+#### Rezultat
+
+Dla ZR o wartości 123,00 PLN (netto 100,00 + VAT 23,00)
+
+![](Sample%20A4.png)

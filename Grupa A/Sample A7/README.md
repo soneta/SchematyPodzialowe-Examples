@@ -18,4 +18,11 @@ Przed uruchomieniem schematu należy skonfigurować podzielnik kosztów.
 
 W przykładzie wprowadzono następujące dane:
 
-![](input-sample7.png)
+![](Sample%20A7.config.png)
+
+#### Rezultat
+
+Dla PK o wartości 1000,00 PLN
+
+![](Sample%20A7.png)
+

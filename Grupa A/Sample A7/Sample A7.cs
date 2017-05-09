@@ -49,7 +49,8 @@ public class Podzielnik_Pozycja_1_Sample_A7
 		/// </summary>
 		public override IEnumerable GetKluczeList()
 		{
-			return PodzielnikTool.ElementyPodzielnika(Session, "Sample 7", "Sample 7", PodzielnikTool.PodzielnikAktualnosc.WgDaty, Podstawa.Data);
+			return PodzielnikTool.ElementyPodzielnika(Session, "Sample 7", "Sample 7", 
+				PodzielnikTool.PodzielnikAktualnosc.WgDaty, Podstawa.Data);
 		}
 	}
 
@@ -128,9 +129,13 @@ public class Podzielnik_Pozycja_1_Sample_A7
 			return null;
 		}
 
+		/// <summary>
+		/// Ponieważ podzielnik kosztu oparty jest o tabelę centrów kosztów to element podziałowy elementu podzielnika
+		/// jest w tym wypadku bezpośrednio centrum, które możemy przypisać do elementu opisu analitycznego. 
+		/// </summary>
 		public override CentrumKosztow GetCentrumKosztow()
 		{
-			return null;
+			return (CentrumKosztow)ElementPodzielnika.ElementPodzialowy;
 		}
 	}
 }

@@ -9,6 +9,17 @@ Schemat podziałowy dla ewidencji.
 * symbole kont zadane przez klucze podziałowe
 * pozostałe właściwości opisu arbitralnie wpisane w schemacie
 
+#### Rezultat
+
+Dla PK o wartości 1000,00 PLN - bez zaokrąglania
+
+![](Sample%20A6.1.png)
+
+Dla PK o wartości 1000,00 PLN - z włączonym zaokrąglaniem
+
+![](Sample%20A6.2.png)
+
+
 #### Komentarz
 
 Schemat pokazuje generowanie opisów analitycznych wg proporcji. W tym wypadku proporcje są stałe, arbitralnie zadane.

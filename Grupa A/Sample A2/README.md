@@ -7,3 +7,9 @@ Schemat podziałowy dokumentu ewidencji.
 * generowany jest 1 opis analityczny
 * kwota równa kwocie dokumentu
 * wymiar, opis, konto: wartości arbitralnie wpisane w schemacie
+
+#### Rezultat
+
+Dla ZR o wartości 123,00 PLN
+
+![](Sample%20A2.png)

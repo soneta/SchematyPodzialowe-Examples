@@ -6,3 +6,9 @@ Schemat podziałowy dokumentu ewidencji.
 * generowany jest 1 opis analityczny
 * kwota równa kwocie dokumentu
 * wymiar, opis, konto: wartości arbitralnie wpisane w schemacie
+
+#### Rezultat
+
+Dla PK o wartości 130,00 PLN
+
+![](Sample%20A1.png)
