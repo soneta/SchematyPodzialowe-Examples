@@ -14,5 +14,5 @@ W przykładzie wprowadzono następujące dane:
 
 
 ---
-[Powrót](README.md)
+[Powrót]()
 

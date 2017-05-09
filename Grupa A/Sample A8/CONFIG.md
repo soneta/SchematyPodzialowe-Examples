@@ -22,5 +22,5 @@ W przykładzie wprowadzono następujące wartości tej cechy dla centrów:
 
 
 ---
-[Powrót](README.md)
+[Powrót]()
 
