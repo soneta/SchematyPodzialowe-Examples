@@ -5,7 +5,27 @@ using Soneta.Types;
 
 
 
-public class Podzielnik_Pozycja_1_Sample_A1
+
+/// <summary>
+/// Kod generowany na poziomie schematu podziałowego
+/// (kalkulator schematu)
+/// </summary>
+public static class Schemat_Sample_A2
+{
+	/// <summary>
+	/// Oprogramowanie metody IsVisible steruje widocznością schematu
+	/// </summary>
+	public static bool IsVisible(DokEwidencji DokEwidencji, IParentZrodlaOpisuAnalitycznego Parent)
+	{ return DokEwidencji.Typ == TypDokumentu.ZakupEwidencja; }
+}
+
+
+
+
+/// <summary>
+/// Kod generowany na poziomie pozycji schematu podziałowego
+/// </summary>
+public class Podzielnik_Pozycja_1_Sample_A2
 {
 	/// <summary>
 	/// Kalkulator podzielnika
@@ -20,7 +40,7 @@ public class Podzielnik_Pozycja_1_Sample_A1
 
 		public DokEwidencji DokEwidencji
 		{
-			get { return (DokEwidencji) Row; }
+			get { return (DokEwidencji)Row; }
 		}
 
 
@@ -48,7 +68,7 @@ public class Podzielnik_Pozycja_1_Sample_A1
 		/// <returns></returns>
 		public override IEnumerable GetKluczeList()
 		{
-			return new[] {DokEwidencji};
+			return new[] { DokEwidencji };
 		}
 	}
 
@@ -69,7 +89,7 @@ public class Podzielnik_Pozycja_1_Sample_A1
 		/// </summary>
 		public DokEwidencji DokEwidencji
 		{
-			get { return (DokEwidencji) Row; }
+			get { return (DokEwidencji)Row; }
 		}
 
 
