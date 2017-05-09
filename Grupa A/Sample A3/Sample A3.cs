@@ -26,18 +26,15 @@ public class Podzielnik_Pozycja_1_Sample_A3
 			get { return (DokEwidencji)Row; }
 		}
 
-
 		public override bool IsEnable()
 		{
 			return true;
 		}
 
-
 		public override Currency GetKwota()
 		{
 			return Currency.Zero;
 		}
-
 
 		public override Amount GetIlosc()
 		{
@@ -65,7 +62,6 @@ public class Podzielnik_Pozycja_1_Sample_A3
 			: base(Row, Podstawa)
 		{ }
 
-
 		/// <summary>
 		/// Kwotę dla opisu analitycznego pobieramy z dokumentu ewidencji, który jest postawą naszego schematu.
 		/// (ponieważ zwróciliśmy klucz null to w tym wypadku odwołanie do klucza przez "Row" nie jest możliwe)
@@ -75,60 +71,50 @@ public class Podzielnik_Pozycja_1_Sample_A3
 			return ((DokEwidencji)Podstawa).Wartosc;
 		}
 
-
 		public override Amount GetIloscKlucza()
 		{
 			return Amount.Zero;
 		}
-
 
 		public override double GetProporcja()
 		{
 			return 0;
 		}
 
-
 		public override string GetWymiar()
 		{
 			return "P1";
 		}
-
 
 		public override Date GetData()
 		{
 			return Date.Today;
 		}
 
-
 		public override string GetSymbol()
 		{
 			return "401-01";
 		}
-
 
 		public override string GetOpis()
 		{
 			return "Wartość dokumentu";
 		}
 
-
 		public override IBudzetProjektu GetBudzet()
 		{
 			return null;
 		}
-
 
 		public override string GetSymbolPozycjiBudzetu()
 		{
 			return string.Empty;
 		}
 
-
 		public override Currency? GetKwotaDodatkowaKlucza()
 		{
 			return null;
 		}
-
 
 		public override CentrumKosztow GetCentrumKosztow()
 		{
