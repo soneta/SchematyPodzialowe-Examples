@@ -7,7 +7,7 @@ using Soneta.Types;
 
 
 
-public class Podzielnik_Pozycja_1_Sample_A5
+public class Podzielnik_Pozycja_1_Sample_A6
 {
 	/// <summary>
 	/// Kalkulator podzielnika
@@ -29,9 +29,13 @@ public class Podzielnik_Pozycja_1_Sample_A5
 			return true;
 		}
 
+		/// <summary>
+		/// Kalkulator podzienika zwraca sumaryczną kwotą. 
+		/// Jest ona wymagana ponieważ schemat ma włączoną opcję generowania kwot na opisach wg prororcji.
+		/// </summary>
 		public override Currency GetKwota()
 		{
-			return Currency.Zero;
+			return DokEwidencji.Wartosc;
 		}
 
 		public override Amount GetIlosc()
@@ -40,12 +44,12 @@ public class Podzielnik_Pozycja_1_Sample_A5
 		}
 
 		/// <summary>
-		/// Jako klucze podziałowe wykorzystujemy obiekty płatności z danej ewidencji
+		/// Jako klucze podziałowe wykorzystujemy tablicę 3 stringów - każdą z wartości potraktujemy jako symbol konta na opisie analitycznym
 		/// (liczba powstałych opisów analitycznych będzie równa ilości płatności)
 		/// </summary>
 		public override IEnumerable GetKluczeList()
 		{
-			return DokEwidencji.Platnosci;
+			return new[] { "401-01", "401-02", "401-03" };
 		}
 	}
 
@@ -56,21 +60,13 @@ public class Podzielnik_Pozycja_1_Sample_A5
 			: base(Row, Podstawa)
 		{ }
 
-
+		
 		/// <summary>
-		/// Generowany automatycznie ponieważ zadeklarowaliśmy, że kluczem podziałowym jest obiekt biznesowy płatność
-		/// </summary>
-		public Platnosc Platnosc
-		{
-			get { return (Platnosc) Row; }
-		}
-
-		/// <summary>
-		/// Kwota opisu analitycznego będzie równa kwocie płatności 
+		/// Kwota podawana przez kalkulator klucza jest ignorowana. Kwota docelowa będzie liczona z proporcji. 
 		/// </summary>
 		public override Currency GetKwotaKlucza()
 		{
-			return Platnosc.Kwota;
+			return 0;
 		}
 
 		public override Amount GetIloscKlucza()
@@ -78,9 +74,12 @@ public class Podzielnik_Pozycja_1_Sample_A5
 			return Amount.Zero;
 		}
 
+		/// <summary>
+		/// Ponieważ włączone jest generowanie kwot wg proporcji kalkulator klucza zwraca proporcję - w tym wypadku arbitralnie jest to 1
+		/// </summary>
 		public override double GetProporcja()
 		{
-			return 0;
+			return 1;
 		}
 
 		public override string GetWymiar()
@@ -94,19 +93,16 @@ public class Podzielnik_Pozycja_1_Sample_A5
 		}
 
 		/// <summary>
-		/// Symbol konta z kodem podmiotu w formacie 200-KOD
+		/// Symbolem konta jest klucz podziałowy typu 'string'. Wymagane jest jedynie rzutowanie ponieważ właściwość 'Row' reprezentująca klucz jest typu 'object'.
 		/// </summary>
 		public override string GetSymbol()
 		{
-			return "200-" + Platnosc.Podmiot.Kod;
+			return (string)Row;
 		}
 
-		/// <summary>
-		/// Do opisu elementu opisu analitycznego kopiujemy pełną nazwę podmiotu z płatności 
-		/// </summary>
 		public override string GetOpis()
 		{
-			return Platnosc.Podmiot.Nazwa;
+			return String.Empty;
 		}
 
 		public override IBudzetProjektu GetBudzet()
