@@ -12,4 +12,4 @@ Przykład|Opis
 [Sample&nbsp;A4](Sample%20A4)|Dwa opisy analityczne dla ewidencji VAT: na kwotę netto oraz kwotę VAT.
 [Sample&nbsp;A5](Sample%20A5)|Jeden opis analityczny na każdą płatność na ewidencji.
 [Sample&nbsp;A6](Sample%20A6)|Trzy opisu analityczne na różne konta dzielące równo kwotę dokumentu ewidencji.
-[Sample&nbsp;A7](Sample%20A7)|Wartość ewidencji dzielona pomiędzy dwa opisy analityczne wg proporcji zadanej podzielnikiem kosztów.
+[Sample&nbsp;A7](Sample%20A7)|Wartość ewidencji dzielona wg proporcji zadanej podzielnikiem kosztów.
