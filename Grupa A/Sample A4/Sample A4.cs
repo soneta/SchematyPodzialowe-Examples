@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using Soneta.Core;
-using Soneta.EwidencjaVat;
-using Soneta.Ksiega.Podzielniki;
-using Soneta.Types;
-
-
+﻿
 
 /// <summary>
 /// Kalkulator schematu 

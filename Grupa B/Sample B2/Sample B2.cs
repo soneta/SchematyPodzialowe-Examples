@@ -57,17 +57,37 @@ public class Podzielnik_Pozycja_1_Sample_B1
 
 		/// <summary>
 		/// Jako klucze podziałowe wykorzystujemy obiekty dedykowanej klasy 'KluczType'.
-		/// Poniższe 3 klucze wygenerują 3 opisy analityczne. Proporcje do obliczeń kwoty pobrane są z
-		/// arbitralnie wybranych cech na dokumencie ewidencji
+		/// Proporcje w tym podzielniku będą wyznaczone przez ilość kontrahentów przypisaną do województw.
 		/// </summary>
 		public override IEnumerable GetKluczeList()
 		{
-			yield return new KluczType
-				{ Symbol = "401-01", Proporcja = (double)DokEwidencji["C01"], Opis = "Proporcja wg cechy C01" };
-			yield return new KluczType
-				{ Symbol = "401-02", Proporcja = (double)DokEwidencji["C02"], Opis = "Proporcja wg cechy C02" };
-			yield return new KluczType
-				{ Symbol = "401-03", Proporcja = (double)DokEwidencji["C03"], Opis = "Proporcja wg cechy C03" };
+			// słownik ze statystyką województwo/ilość kontrahentów
+			var stats = new Dictionary<Wojewodztwa, int>();
+
+			// dane kontrahentów
+			var kontrahenci = Row.Session.Get<CRMModule>().Kontrahenci.WgKodu;
+
+			// budujemy statystyke
+			foreach (var kontrahent in kontrahenci)
+			{
+				int count;
+				var woj = kontrahent.Adres.Wojewodztwo;
+
+				stats.TryGetValue(woj, out count);
+				stats[woj] = ++count;
+			}
+
+			// dla każdego zarejestrowanego województwa tworzymy klucz podziałowy
+			foreach (var key in stats)
+				yield return new KluczType
+				{
+					// proporcja to ilość kontrahentów w województwie
+					Proporcja = key.Value,
+					// opis elementu: nazwa województwa
+					Opis = CaptionAttribute.EnumToString(key.Key),
+					// symbol zbudowany z wykorzystaniem numeru wojewodztwa
+					Symbol = string.Format("501-01-papier-{0:00}", (int)key.Key)
+				};
 		}
 	}
 

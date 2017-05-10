@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using Soneta.Core;
-using Soneta.Ksiega.Podzielniki;
-using Soneta.Types;
-
-
-
+﻿
 
 /// <summary>
 /// Kod generowany na poziomie pozycji schematu podziałowego

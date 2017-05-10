@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using Soneta.Core;
-using Soneta.Kasa;
-using Soneta.Ksiega.Podzielniki;
-using Soneta.Types;
-
-
+﻿
 
 public class Podzielnik_Pozycja_1_Sample_A6
 {

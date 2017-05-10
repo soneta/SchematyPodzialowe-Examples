@@ -6,3 +6,4 @@ Poniższe przykłady posiadają zaawansowany kod, którego edycja będzie wymaga
 Przykład|Opis
 -|-
 [Sample&nbsp;B1](Sample%20B1)|Opisy wg proporcji z cech na ewidencji (dedykowana klasa klucza podziałowego).
+[Sample&nbsp;B2](Sample%20B2)|Podział wg ilości kontrahentów w województwach.
