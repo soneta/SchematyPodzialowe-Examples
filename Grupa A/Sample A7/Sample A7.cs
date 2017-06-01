@@ -27,7 +27,7 @@ public class Podzielnik_Pozycja_1_Sample_A7
 		/// </summary>
 		public override Currency GetKwota()
 		{
-			return DokEwidencji.Wartosc;
+			return DokEwidencji.KwotaPodstawy("");
 		}
 
 		public override Amount GetIlosc()

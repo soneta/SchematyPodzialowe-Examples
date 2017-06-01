@@ -68,7 +68,7 @@ namespace GeekOut2017.Sample.D1
 			//
 
 			pozycja._IsEnable = "true";
-			pozycja._GetKwota = "DokEwidencji.Wartosc";
+			pozycja._GetKwota = @"DokEwidencji.KwotaPodstawy("""")";
 			pozycja._GetKluczeList = $@"PodzielnikTool.ElementyPodzielnika(Session, ""{Pm.Zestaw.Nazwa}"", ""{podzielnik.Nazwa}"", PodzielnikTool.PodzielnikAktualnosc.WgDaty, Podstawa.Data)";
 
 			//

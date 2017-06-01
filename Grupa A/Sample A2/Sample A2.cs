@@ -86,7 +86,7 @@ public class Podzielnik_Pozycja_1_Sample_A2
 		/// </summary>
 		public override Currency GetKwotaKlucza()
 		{
-			return DokEwidencji.Wartosc;
+			return DokEwidencji.KwotaPodstawy("");
 		}
 
 		public override Amount GetIloscKlucza()

@@ -4,7 +4,7 @@
 Schemat podziałowy dokumentu ewidencji.
 
 * generowany jest 1 opis analityczny
-* kwota równa kwocie dokumentu
+* kwota równa kwocie podstawy dokumentu
 * wymiar, opis, konto: wartości arbitralnie wpisane w schemacie
 
 #### Rezultat
